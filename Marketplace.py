@@ -12,6 +12,15 @@ class Marketplace(object):
         saldoAwal = saldoAwal + amount
         return "TopUp berhasil ditambahkan Rp. %s" % saldoAwal
 
+    def Pulsa(self, number, oper, amount):
+    	global saldoAwal
+    	print (amount)
+    	if amount < saldoAwal:
+    		saldoAwal = saldoAwal - amount
+    		return "Beli pulsa Rp. %s berhasil" %saldoAwal
+    	else:
+    		return "Saldo Tidak Cukup"
+
 s = zerorpc.Server(Marketplace())
 s.bind("tcp://0.0.0.0:10000")
 s.run()
