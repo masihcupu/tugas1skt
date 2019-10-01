@@ -1,7 +1,7 @@
 import zerorpc
 user = {
     "nama": "joko",
-    "saldo": 50000
+    "saldo": 500000
 }
 marketplace = {
     "nama":"Tokotokoan",

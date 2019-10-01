@@ -2,6 +2,8 @@ import zerorpc
 
 c = zerorpc.Client()
 c.connect("tcp://127.0.0.1:9999")
+operator = zerorpc.Client()
+operator.connect("tcp://127.0.0.1:6969")
 
 saldoAwal = 0
 
@@ -16,8 +18,8 @@ class Marketplace(object):
     	global saldoAwal
     	print (amount)
     	if amount < saldoAwal:
-    		saldoAwal = saldoAwal - amount
-    		return "Beli pulsa Rp. %s berhasil" %saldoAwal
+            saldoAwal = saldoAwal - amount
+            operator.isi(number, oper, amount)
     	else:
     		return "Saldo Tidak Cukup"
 
